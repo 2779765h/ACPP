@@ -1,0 +1,23 @@
+[project]
+# note to self - NA or missing information needs to be checked or updated
+name = "Applied-Computing-in-Physics"
+version = NA 
+authors = [
+  { name="Alicja Hertmanowska", email="2779765h@student.gla.ac.uk" },
+]
+
+description = "A small example package"
+readme = "README.md"
+requires-python = NA
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+dependencies = []
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+
+[project.urls]
+Homepage = "https://github.com/2779765h/Applied-Computing-in-Physics.git"
+

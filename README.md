@@ -1,1 +1,3 @@
-2779765h
+Student ID: 2779765h.
+
+Applied computing in physics project. 

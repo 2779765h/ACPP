@@ -1,22 +1,26 @@
 [project]
-# note to self - NA or missing information needs to be checked or updated
 name = "Applied-Computing-in-Physics"
-version = NA 
 authors = [
   { name="Alicja Hertmanowska", email="2779765h@student.gla.ac.uk" },
 ]
 
-description = "A small example package"
+description = "Applied Computing in Physics"
 readme = "README.md"
-requires-python = NA
+requires-python = ">=3.9"
 classifiers = [
     "Programming Language :: Python :: 3",
     "Operating System :: OS Independent",
 ]
 
-dependencies = []
-license = "MIT"
-license-files = ["LICEN[CS]E*"]
+dependencies = [
+    "py4dstem = 0.14.18",
+    "numpy = 1.26.4",
+    "scipy = 1.17.0",
+    "h5py >= 3.15.1",
+    "hdf5plugin >= 6.0.0",
+    "matplotlib >= 3.10.8",
+    "tqdm >= 4.67.1",
+]
 
 [project.urls]
 Homepage = "https://github.com/2779765h/Applied-Computing-in-Physics.git"

@@ -1,17 +1,17 @@
 [project]
-name = "Applied-Computing-in-Physics"
+name = "example_package_2779765h"
+version = "0.0.1"
 authors = [
   { name="Alicja Hertmanowska", email="2779765h@student.gla.ac.uk" },
 ]
 
-description = "Applied Computing in Physics"
+description = "A small example package"
 readme = "README.md"
 requires-python = ">=3.9"
 classifiers = [
     "Programming Language :: Python :: 3",
     "Operating System :: OS Independent",
 ]
-
 dependencies = [
     "py4dstem = 0.14.18",
     "numpy = 1.26.4",
@@ -21,7 +21,14 @@ dependencies = [
     "matplotlib >= 3.10.8",
     "tqdm >= 4.67.1",
 ]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+
+[build-system]
+requires = ["setuptools >= 77.0.3"] # check 
+build-backend = "setuptools.build_meta" # check
 
 [project.urls]
 Homepage = "https://github.com/2779765h/Applied-Computing-in-Physics.git"
+Issues = "https://github.com/2779765h/Applied-Computing-in-Physics.git/issues"
 

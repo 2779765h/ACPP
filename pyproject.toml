@@ -26,6 +26,6 @@ requires = ["setuptools >= 77.0.3"] # check
 build-backend = "setuptools.build_meta" # check
 
 [project.urls]
-Homepage = "https://github.com/2779765h/Applied-Computing-in-Physics.git"
-Issues = "https://github.com/2779765h/Applied-Computing-in-Physics.git/issues"
+Homepage = "https://github.com/2779765h/ACPP.git"
+
 

@@ -1,1 +1,2 @@
 from ACPP.BestFitFunction.PeriodicSineFitting import add
+from ACPP.BestFitFunction.PolynomialFittingFunction import add

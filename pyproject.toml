@@ -16,8 +16,9 @@ dependencies = [
     "py4dstem == 0.14.18",
     "numpy == 1.26.4",
     "scipy == 1.17.0",
-    "matplotlib >= 3.10.8",  
+    "matplotlib >= 3.10.8",
 ]
+
 license = "MIT"
 license-files = ["LICEN[CS]E*"]
 

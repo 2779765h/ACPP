@@ -8,4 +8,4 @@ def divide(a,b):
   return: float
   '''
   print('Division of {0} / {1} gives {2}'.format(a, b, a/b))
-  return 
+  return a/b

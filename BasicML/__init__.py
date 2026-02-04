@@ -1,2 +1,2 @@
-from ACPP import sinfunc
-from ACPP import minimisefunc
+from ACPP.BasicML.MinimizationFunction import minimisefunc
+from ACPP.BasicML.PeriodicSignal import sinfunc

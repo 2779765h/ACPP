@@ -10,6 +10,7 @@ def minimisefunc(x,funcs):
     f2: np.array
     f3: np.array
     f4: np.array
+    return: np.float
 
     Define a function to compute f(t) - af1 + bf2 + cf3 + df4 
     and minimising the known funcs to find a solution of values for x = [a, b, c, d]

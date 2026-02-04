@@ -5,7 +5,7 @@ def product(a,b):
   data types:
   a: float
   b: float
-  output: float
+  return: float
   '''
   print('Multiplying {0} x {1} gives {2}'.format(a, b, a*b))
   return a*b

@@ -1,2 +1,2 @@
-from ACPP.BestFitFunction.PeriodicSineFitFunction import PeriodicSineFit
+from ACPP.BestFitFunction.SinePFF import PeriodicSineFit
 from ACPP.BestFitFunction.PolynomialFittingFunction import FitandPlot

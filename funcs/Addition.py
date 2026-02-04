@@ -5,7 +5,7 @@ def add(a,b):
   data types:
   a: float
   b: float
+  return: float
   '''
-  return a + b
-
-print('Addition of {0} + {1} is {2}'.format(a, b, add(a,b)))
+  print('Addition of {0} + {1} is {2}'.format(a, b, a + b))
+  return 

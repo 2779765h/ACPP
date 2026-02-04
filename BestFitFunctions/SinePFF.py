@@ -1,4 +1,5 @@
 import numpy as np
+from scipy import optimize
 
 def PeriodicSineFit(x, c, A0, A1, A2, A3):
     '''
@@ -14,3 +15,6 @@ def PeriodicSineFit(x, c, A0, A1, A2, A3):
     return: numpy array
     '''
     return c + A0*np.sin(x/2) + A1*np.sin(2*x/2) + A2*np.sin(3*x/2) + A3*np.sin(4*x/2)
+
+# Curve fitting
+p, V = optimize.curve_fit(PeriodicSineFit, x, y, p0=[0, 0, 0, 0, 0])

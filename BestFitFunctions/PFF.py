@@ -1,6 +1,6 @@
-# Define a function for making best fit and plots
+import numpy as np
 
-def FitandPlot(x, y, degree, Rx, Ry, Figure):
+def FitandPlot(x, y, degree, Rx, Ry, Px, Py, Ex, Ey, Figure):
     '''
     Data types:
     x: np.array
@@ -17,7 +17,8 @@ def FitandPlot(x, y, degree, Rx, Ry, Figure):
     Rx - x coordinate of the position for goodness of fit
     Ry - y coordinate of the position for goodness of fit
     Figure - Figure number
-    
+
+    Define a function for making best fit and plots.
     Calculates the best fit, then the residuals, and then computes the goodness of fit.
     Transfers all the calculated data towards plotting 
     and showing the data with fit and a seperate residuals plot. 
@@ -56,15 +57,15 @@ def FitandPlot(x, y, degree, Rx, Ry, Figure):
     Parameters = "Fit parameters:\n"
     for i, a in enumerate(bestfit_parameters):
         b = degree - i
-        Parameters += 'a{b} = {val:.2f}\n'.format(b=b, val=a)
+        Parameters += 'a{b} = {j:.2f}\n'.format(b=b, j=a)
         
     Errors = "Fit uncertainties:\n"
     for i, da in enumerate(bestfit_errors):
         c = degree - i
-        Errors += 'Δa{c} = {val:.2f}\n'.format(c=c, val=da)
-       
-    plt.text(0.05, 0.95, Parameters)
-    plt.text(0.35, 0.95, Errors)
+        Errors += 'Δa{c} = {j:.2f}\n'.format(c=c, j=da)
+
+    plt.text(Px, Py, Parameters)
+    plt.text(Ex, Ey, Errors)
     plt.legend()
 
     # Residuals plot

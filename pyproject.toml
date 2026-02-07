@@ -21,9 +21,6 @@ dependencies = [
 license = "MIT"
 license-files = ["LICEN[CS]E*"]
 
-[tool.setuptools]
-packages = ["funcs", "BasicML", "BestFitFunctions"]
-
 [build-system]
 requires = ["setuptools >= 77.0.3"] # check 
 build-backend = "setuptools.build_meta" # check

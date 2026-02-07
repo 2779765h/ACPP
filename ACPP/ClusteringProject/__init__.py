@@ -1,2 +1,2 @@
 from ACPP.ClusteringProject.KMeansClustering import *
-from ACPP.ClusteringProject.KMeansReconstructed import ReconstructedImage
+from ACPP.ClusteringProject.ReconstructedCluster import ReconstructedImage

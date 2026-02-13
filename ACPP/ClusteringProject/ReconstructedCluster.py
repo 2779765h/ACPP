@@ -1,30 +1,37 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-def ReconstructedImage(ClusterType, ClusterIndex, Title):
+def VirtualImage(ClusterType, ClusterIndex, Data, Rx_col, Ry_col):
     '''
     Function for plotting the image of a clustered pixel in the real space from reciprocal space.
     Cluster types extract the label from the specified clustering algorithm.
 
-    Data types:
+    Data types
+    ----------
     ClusterType: String (if db = DBSCAN, then enter db, if k = KMEANS, then k etc.)
     ClusterIndex: Int
-    Title: String
-    '''
-    # Finding max dimensions of Qx, Qy
-    Qxmax, Qymax = data[:,3].max().astype('int')+1, data[:,4].max().astype('int')+1
+    Data: numpy array
+    Rx_col: Int (corresponds to the column in the dataset)
+    Ry_col: Int 
 
+    Returns
+    ----------
+    matplotlib figure
+    '''
     # Select a specific cluster points
-    Cluster = data[np.where(ClusterType.labels_ == ClusterIndex)]
+    Cluster = Data[np.where(ClusterType.labels_ == ClusterIndex)]
+
+    Rx = Cluster[:, Rx_col]
+    Ry = Cluster[:, Ry_col]
+
+    # Finding max dimensions of Rx, Ry
+    Rxmax, Rymax = Rx.max().astype('int')+1, Ry.max().astype('int')+1
 
     # Create image 
-    image = np.zeros(shape=(Qxmax,Qymax))
-    image[Cluster[:,3].astype('int'),Cluster[:,4].astype('int')] = Cluster[:,2]
+    image = np.zeros(shape=(Rxmax,Rymax))
+    image[Cluster[:, Rx_col].astype('int'), Cluster[:, Ry_col].astype('int')] = Cluster[:,2]
 
     # Plot
-    plt.figure(figsize=[8,8])
-    plt.title(Title)
+    plt.figure(figsize=[7,7])
     plt.imshow(image)
-    plt.xlabel('Rx')
-    plt.ylabel('Ry')
     plt.show()

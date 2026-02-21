@@ -20,7 +20,7 @@ Qx = data[:,0]
 Qy = data[:,1]
 
 # DBScan
-db = DBSCAN(eps=0.30,min_samples=r).fit(data[:,:2])
+db = DBSCAN(eps=0.310,min_samples=r).fit(data[:,:2])
 db.labels_
 
 # Plot

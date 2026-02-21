@@ -2,6 +2,11 @@ import numpy as np
 
 def FitandPlot(x, y, degree, Rx, Ry, Px, Py, Ex, Ey, Figure):
     '''
+    Define a function for making best fit and plots.
+    Calculates the best fit, then the residuals, and then computes the goodness of fit.
+    Transfers all the calculated data towards plotting 
+    and showing the data with fit and a seperate residuals plot. 
+    
     Data types:
     x: np.array
     y: np.array
@@ -17,11 +22,6 @@ def FitandPlot(x, y, degree, Rx, Ry, Px, Py, Ex, Ey, Figure):
     Rx - x coordinate of the position for goodness of fit
     Ry - y coordinate of the position for goodness of fit
     Figure - Figure number
-
-    Define a function for making best fit and plots.
-    Calculates the best fit, then the residuals, and then computes the goodness of fit.
-    Transfers all the calculated data towards plotting 
-    and showing the data with fit and a seperate residuals plot. 
     '''
 
     # Perform fitting 

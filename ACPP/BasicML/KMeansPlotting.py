@@ -15,6 +15,14 @@ for n in range(r):
     c = hsv_to_rgb(H,S,V)
     colours += [c] 
 
+# Load Data
+data = np.load('BFBTgrain_112_pointsarray_bin.npy')
+Qx = data[:,0]
+Qy = data[:,1]
+
+# Apply KMeans
+k = KMeans(n_clusters=r).fit(data[:,:2])
+
 # Plot
 plt.figure(figsize=[10,10])
 plt.title('KMeans Clustering')

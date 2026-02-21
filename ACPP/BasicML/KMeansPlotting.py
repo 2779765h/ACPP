@@ -30,7 +30,7 @@ for i in range(r):
     Cluster = data[np.where(k.labels_ == i)]
     scatter = plt.scatter(Cluster[:, 0], Cluster[:, 1], color=colours[i], label = i)
     
-    for n in range(0,Cluster.shape[0],4000): # number of iterations 
+    for n in range(0,Cluster.shape[0],4500): # number of iterations 
         plt.text(
             Cluster[n, 0], 
             Cluster[n, 1]+3, 

@@ -4,6 +4,16 @@ from sklearn.cluster import DBSCAN
 from colorsys import hsv_to_rgb
 
 def DBScan(Data, r):
+    '''
+    Function to apply DBscan onto data.
+
+    Data types:
+    Data: np array
+    r: integers
+
+    Return:
+    Matplotlib plot
+    '''
     
     # Colours
     colours = []

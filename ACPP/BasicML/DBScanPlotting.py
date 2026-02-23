@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from sklearn.cluster import DBSCAN
 from colorsys import hsv_to_rgb
 
-def DBScan(Data, r):
+def DBScanClustering(Data, r):
     '''
     Function to apply DBscan onto data.
 

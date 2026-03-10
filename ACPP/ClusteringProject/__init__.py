@@ -1,2 +1,2 @@
-from ACPP.ClusteringProject.DigitalDarkFieldImage import VirtualImage
+from ACPP.ClusteringProject.DigitalDarkFieldFunction import VirtualImage
 

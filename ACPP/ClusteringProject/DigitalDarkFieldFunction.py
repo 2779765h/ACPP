@@ -1,10 +1,20 @@
 import numpy as np
 
-def VirtualImage(Data, Label, Index):
+def VirtualImage(Data, Label, Index, x, y):
+    '''
+    Function which produces the Digital Dark Field Image of a selected cluster.
+
+    Data types:
+    Data: numpy array
+    Label: numpy array
+    Index: Int
+    x: Int 
+    y: Int 
+    '''
     Cluster = Data[np.where(Label == Index)]
 
-    Rxc = Cluster[:, 0]
-    Ryc = Cluster[:, 1]
+    Rxc = Cluster[:, x]
+    Ryc = Cluster[:, y]
 
     # Finding max dimensions of Rx, Ry
     Rxmax, Rymax = Rx.max().astype('int')+1, Ry.max().astype('int')+1

@@ -1,0 +1,22 @@
+import numpy as np
+
+def VirtualImage(Data, Label, Index):
+    Cluster = Data[np.where(Label == Index)]
+
+    Rxc = Cluster[:, 0]
+    Ryc = Cluster[:, 1]
+
+    # Finding max dimensions of Rx, Ry
+    Rxmax, Rymax = Rx.max().astype('int')+1, Ry.max().astype('int')+1
+    
+    # Create image 
+    image = np.zeros(shape=(Rxmax,Rymax))
+    image[Rxc.astype('int'), Ryc.astype('int')]  = Cluster[:,1]
+
+    # Plot
+    plt.figure(figsize=[7,7])
+    plt.title('Virtual Image for Cluster H')
+    plt.xlabel('Ry')
+    plt.ylabel('Rx')
+    plt.imshow(image)
+    plt.show()

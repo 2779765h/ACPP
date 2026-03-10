@@ -1,8 +1,9 @@
 import numpy as np
 from scipy.optimize import minimize
 
-funcs = np.stack((f, f1, f2, f3, f4)) # Stacks the functions
-def minimisefunc(x,funcs):
+# Stacks the functions
+# funcs = np.stack((f, f1, f2, f3, f4)) 
+def minimisefunc(x, funcs):
     ''' 
     Data types:
     f: np.array

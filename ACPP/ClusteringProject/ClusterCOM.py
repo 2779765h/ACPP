@@ -18,7 +18,7 @@ def COM_Y(m,y):
     Data types:
     m: int or numpy array
     y: numpy array
-    return float
+    return: float
     '''
     return (np.sum(m * y)) / np.sum(m)
 

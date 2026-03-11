@@ -1,21 +1,42 @@
-# find COM for each cluster
+import numpy as np
 
 def COM_X(m,x):
-    m = np.array(m)
-    x = np.array(x)
+    '''
+    Calculates COM for x-coordinate.
+
+    Data types:
+    m: int or numpy array
+    x: numpy array
+    '''
     return (np.sum(m * x)) / np.sum(m)
 
 def COM_Y(m,y):
-    m = np.array(m)
-    y = np.array(y)
+    '''
+    Calculates COM for y-coordinate.
+
+    Data types:
+    m: int or numpy array
+    y: numpy array
+    '''
     return (np.sum(m * y)) / np.sum(m)
 
-def Cluster_COM(Data, Range, Weight=True):
+def Cluster_COM(Data, Range, label, Weight=True):
+    '''
+    Calculates COM for every cluster in a clustering graph.
+    
+    Data types:
+    Data: numpy array
+    Range: numpy array
+    label: numpy array
+    Weight: bool
+        if True, applies pixel weighting to the centre of masses
+
+    '''
     COM_Values = []
 
     # loop over all clusters
-    for p in Range: # loop over the number of clusters
-        Cluster = Data[np.where(db.labels_ == p)]
+    for p in Range:
+        Cluster = Data[np.where(label == p)]
 
         if Weight:
             # COM weighting

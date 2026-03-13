@@ -62,6 +62,7 @@ def DBScanClustering(Data, ScalingArray,
 
     ax.set_xlabel(xlabel)
     ax.set_ylabel(ylabel)
-
+                       
     if savefig:
-        plt.savefig("scatter_plot.png")
+        plt.savefig('DBSCANClusteringPlot')
+

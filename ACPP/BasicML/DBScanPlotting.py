@@ -3,21 +3,39 @@ import matplotlib.pyplot as plt
 from sklearn.cluster import DBSCAN
 from colorsys import hsv_to_rgb
 
-def DBScanClustering(Data, r):
+def DBScanClustering(Data, ScalingArray,
+                     eps, min_samples, 
+                     c1, c2, 
+                     xlabel, ylabel,
+                     savefig = True):
     '''
-    Function to apply DBscan onto data.
+    Function which applies DBSCAN clustering to a dataset 
+    and plots a clustering graph from selected data arrays. 
 
-    Data types:
-    Data: np array
-    r: integers
+    Parameters:
+    Data: numpy array
+    ScalingArray: numpy array
+    eps: int
+    min_samples: int
+    c1: int
+    c2: int
+    xlabel: string
+    ylabel: string
+    savefig: bool
+        if True, figure is saved as a graphics file
 
     Return:
-    Matplotlib plot
+    NoneType
     '''
+
+    # DBScan
+    db = DBSCAN(eps=eps, min_samples=min_samples).fit(Data*ScalingArray)
     
-    # Colours
+    # Colour scheme
     colours = []
+    r = db.labels_.max()+1
     d = 5
+
     for n in range(r):
         h, v = int(n/d), n%d
         H = h/(r/d)
@@ -26,29 +44,24 @@ def DBScanClustering(Data, r):
         c = hsv_to_rgb(H,S,V)
         colours += [c] 
     
-    # Import Data
-    # data = np.load('BFBTgrain_112_pointsarray_bin.npy')
-    Qx = data[:,0]
-    Qy = data[:,1]
-
-    # DBScan
-    db = DBSCAN(eps=0.30, min_samples=r).fit(data[:,:2])
-    db.labels_
-
     # Plot
-    plt.figure(figsize=[10,10])
-    plt.title('DBScan Clustering')
+    fig, ax = plt.subplots(figsize=[8,8])
+    ax.set_title('DBScan Clustering')
 
     for i in range(r):   
-        Cluster = data[np.where(db.labels_ == i)]
-        scatter = plt.scatter(Cluster[:, 0], Cluster[:, 1], color=colours[i], label = i)
+        Cluster = Data[np.where(db.labels_ == i)]
+        scatter = ax.scatter(Cluster[:, c1], Cluster[:, c2], color=colours[i], label = i, s=5, alpha=1)
     
         for n in range(0,Cluster.shape[0],4500): # number of iterations 
-            plt.text(
-                Cluster[n, 0], 
-                Cluster[n, 1]+3, 
+            ax.text(
+                Cluster[n, c1], 
+                Cluster[n, c2]+3, 
                 int(i),
                 horizontalalignment='center'
             )
-        plt.xlabel("Qx")
-        plt.ylabel("Qy")
+
+    ax.set_xlabel(xlabel)
+    ax.set_ylabel(ylabel)
+
+    if savefig:
+        plt.savefig("scatter_plot.png")

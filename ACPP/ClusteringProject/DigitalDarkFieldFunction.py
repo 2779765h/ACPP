@@ -1,15 +1,22 @@
 import numpy as np
 
-def VirtualImage(Data, Label, Index, x, y):
+def VirtualImage(Data, Label, Index, x, y, Rx, Ry):
     '''
-    Function which produces the Digital Dark Field Image of a selected cluster.
+    Function which produces the Digital Dark Field Image of a selected cluster
 
     Data types:
     Data: numpy array
     Label: numpy array
+        this corresponds to the clustering type, so for DBSCAN use db.labels_
+        
     Index: Int
+        select the index of the cluster
     x: Int 
     y: Int 
+    Rx: numpy array
+    Ry: numpy array
+    returns: NoneType
+        virtual image of cluster
     '''
     Cluster = Data[np.where(Label == Index)]
 

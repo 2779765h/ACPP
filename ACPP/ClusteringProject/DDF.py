@@ -2,7 +2,7 @@ import numpy as np
 
 def VirtualImage(Data, Label, Index, x, y, Rx, Ry, savefig = True):
     '''
-    Function which produces the Digital Dark Field Image of a selected cluster.
+    Function which produces the Digital Dark Field (DDF) Image of a selected cluster.
 
     Data types:
     Data: numpy array

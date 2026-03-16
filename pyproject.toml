@@ -25,9 +25,6 @@ license-files = ["LICEN[CS]E*"]
 requires = ["setuptools >= 77.0.3"] # check 
 build-backend = "setuptools.build_meta" # check
 
-[tool.setuptools]
-py-modules = []
-
 [project.urls]
 Homepage = "https://github.com/2779765h/ACPP.git"
 

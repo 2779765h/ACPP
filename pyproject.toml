@@ -5,7 +5,7 @@ authors = [
   { name="Alicja Hertmanowska", email="2779765h@student.gla.ac.uk" },
 ]
 
-description = "A small example package"
+description = "Application of DBSCAN Clustering to 4D-STEM Data"
 readme = "README.md"
 requires-python = ">=3.9"
 classifiers = [

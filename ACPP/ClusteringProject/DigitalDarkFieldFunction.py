@@ -1,8 +1,8 @@
 import numpy as np
 
-def VirtualImage(Data, Label, Index, x, y, Rx, Ry):
+def VirtualImage(Data, Label, Index, x, y, Rx, Ry, savefig = True):
     '''
-    Function which produces the Digital Dark Field Image of a selected cluster
+    Function which produces the Digital Dark Field Image of a selected cluster.
 
     Data types:
     Data: numpy array
@@ -15,7 +15,8 @@ def VirtualImage(Data, Label, Index, x, y, Rx, Ry):
     y: Int 
     Rx: numpy array
     Ry: numpy array
-    returns: NoneType
+
+    Return: NoneType
         virtual image of cluster
     '''
     Cluster = Data[np.where(Label == Index)]
@@ -31,9 +32,14 @@ def VirtualImage(Data, Label, Index, x, y, Rx, Ry):
     image[Rxc.astype('int'), Ryc.astype('int')]  = Cluster[:,1]
 
     # Plot
-    plt.figure(figsize=[7,7])
-    plt.title('Virtual Image for Cluster H')
-    plt.xlabel('Ry')
-    plt.ylabel('Rx')
-    plt.imshow(image)
+    fig, ax = plt.subplots(figsize=[7,7])
+
+    ax.imshow(image)
+      
+    ax.set_xlabel('Ry')
+    ax.set_ylabel('Rx')
+
     plt.show()
+         
+    if savefig:
+        fig.savefig('DigitalDarkFieldImage')

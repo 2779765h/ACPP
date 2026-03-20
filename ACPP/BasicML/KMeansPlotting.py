@@ -26,7 +26,6 @@ def KMeansClustering(Data, ScalingArray,
         if True, type the name of the figure to saved as a string
 
     Return:
-    NoneType
     '''
     # Apply KMeans
     k = KMeans(n_clusters=n_clusters).fit(Data*ScalingArray)

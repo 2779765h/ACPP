@@ -13,7 +13,8 @@ def FitandPlot(x, y, degree, Rx, Ry, Px, Py, Ex, Ey, Figure):
     degree: int
     Rx: float
     Ry: float
-    Figure: str     
+    Figure: str 
+    Return:
 
     This function takes input parameters:
     x = x_data

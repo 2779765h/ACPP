@@ -16,8 +16,7 @@ def VirtualImage(Data, Label, Index, x, y, Rx, Ry, savefig = True):
     Rx: numpy array
     Ry: numpy array
 
-    Return: NoneType
-        virtual image of cluster
+    Return:
     '''
     Cluster = Data[np.where(Label == Index)]
 

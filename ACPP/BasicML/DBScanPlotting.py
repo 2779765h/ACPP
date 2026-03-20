@@ -25,7 +25,6 @@ def DBScanClustering(Data, ScalingArray,
         if True, figure is saved as a graphics file
 
     Return:
-    NoneType
     '''
 
     # DBScan

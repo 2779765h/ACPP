@@ -1,37 +1,44 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
-def VirtualImage(Data, Label, Index, x, y, Rx, Ry, savefig = True):
+def VirtualImage(Data, Label, Index, savefig = True, figax = None):
     '''
-    Function which produces the Digital Dark Field (DDF) Image of a selected cluster.
+    Function which produces the Digital Dark Field Image of a selected cluster.
 
-    Data types:
+    Parameters
+    ----------
     Data: numpy array
+        dataset used for clustering
     Label: numpy array
-        this corresponds to the clustering type, so for DBSCAN use db.labels_
-        
+        clustering labels, i.e. for DBSCAN use db.labels_
     Index: Int
         select the index of the cluster
-    x: Int 
-    y: Int 
-    Rx: numpy array
-    Ry: numpy array
+    savefig: bool
+        if True, the figure is saved as 'DigitalDarkFieldImage'
+    figax: tuple, None
+        (fig, ax)
 
-    Return:
+    Returns
+    ----------
+    None
     '''
     Cluster = Data[np.where(Label == Index)]
 
-    Rxc = Cluster[:, x]
-    Ryc = Cluster[:, y]
+    Rxc = Cluster[:, 3]
+    Ryc = Cluster[:, 4]
 
     # Finding max dimensions of Rx, Ry
-    Rxmax, Rymax = Rx.max().astype('int')+1, Ry.max().astype('int')+1
+    Rxmax, Rymax = Data[:,3].max().astype('int')+1, Data[:,4].max().astype('int')+1
     
     # Create image 
     image = np.zeros(shape=(Rxmax,Rymax))
-    image[Rxc.astype('int'), Ryc.astype('int')]  = Cluster[:,1]
+    image[Rxc.astype('int'), Ryc.astype('int')]  = Cluster[:,2]
 
     # Plot
-    fig, ax = plt.subplots(figsize=[7,7])
+    if figax != None:
+        fig, ax = figax
+    else:
+        fig, ax = plt.subplots(figsize=[7,7])
 
     ax.imshow(image)
       

@@ -1,1 +1,2 @@
 from ACPP.BestFitFunctions.fit_resdiuals_plot import FitandPlot
+from ACPP.BestFitFunctions.periodic_fitting import PeriodicSineFit

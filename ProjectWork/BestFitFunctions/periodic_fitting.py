@@ -1,30 +1,42 @@
 import numpy as np
 
-def FitandPlot(x, y, degree, Rx, Ry, Px, Py, Ex, Ey, Figure):
+def FitandPlot(x, y, degree, 
+               Rx, Ry, 
+               Px, Py, 
+               Ex, Ey, 
+               Figure):
     '''
-    Define a function for making best fit and plots.
-    Calculates the best fit, then the residuals, and then computes the goodness of fit.
+    Function that computes the best fit, residuals, and goodness of fit.
     Transfers all the calculated data towards plotting 
-    and showing the data with fit and a seperate residuals plot. 
-    
-    Data types:
+    and shows the data with a fit and a separate residuals plot. 
+
+    Parameters
+    ----------
     x: np.array
+        x coordinate of data array
     y: np.array
+        y coordinate of data array
     degree: int
+        the degree of the polynomial
     Rx: float
+        x coordinate for the goodness of fit text position 
     Ry: float
-    Figure: str 
-    Return:
+        y coordinate for the goodness of fit text position 
+    Px: float
+        x coordinate for the fit parameter text position
+    Py: float
+        y coordinate for the fit parameter text position
+    Ex: float
+        x coordinate for the error text position
+    Ey: float
+        y coordinate for the error text position
+   Figure: str 
+        figure number
 
-    This function takes input parameters:
-    x = x_data
-    y = y_data
-    degree - represents the degree of the polynomial
-    Rx - x coordinate of the position for goodness of fit
-    Ry - y coordinate of the position for goodness of fit
-    Figure - Figure number
+    Returns
+    ----------
+    None
     '''
-
     # Perform fitting 
     p, V = np.polyfit(x, y, degree, cov=True) 
     x_fit = np.linspace(min(x), max(x), 300)
@@ -43,7 +55,7 @@ def FitandPlot(x, y, degree, Rx, Ry, Px, Py, Ex, Ey, Figure):
     R_squared = (1 - (SS_res / SS_tot)) 
 
     # Plots
-    plt.figure(figsize=[10,6])
+    plt.figure(figsize=[8,8])
 
     # Best fit plot
     plt.subplot(2,2,1)

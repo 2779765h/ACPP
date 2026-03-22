@@ -5,7 +5,9 @@ def add(a,b):
   Parameters
   ----------
   a: float
+    input number
   b: float
+    input number
         
   Returns
   ----------

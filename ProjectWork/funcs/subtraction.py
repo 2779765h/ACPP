@@ -1,11 +1,18 @@
 def sub(a,b):
   '''
-  function to subtract two numbers (a - b) and output the result"
+  Function to subtract two numbers (a - b) and output the result
 
-  data types:
+  Parameters
+  ----------
   a: float
+    number to be subtracted from
   b: float
-  return: float  
+    number used for subtraction
+        
+  Returns
+  ----------
+  float
+    result from the subtraction of input variables (a - b)
   '''
   print('Subtraction of {0} - {1} is {2}'.format(a, b, a-b))
   return a - b

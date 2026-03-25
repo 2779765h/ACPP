@@ -2,13 +2,19 @@ import numpy as np
 
 def hypotenuse(a,b):
   '''
-  Function calculates the hypotenuse of a right angled triangle
-
-  data types:
+  Function calculates the hypotenuse of a right-angled triangle
+  
+  Parameters
+  ----------
   a: float
+    length of one side of the triangle
   b: float
-  return: numpy float
+    length of one side of the triangle
+        
+  Returns
+  ----------
+  numpy float
+    hypotenuse of the triangle
   '''
   print('The hypotenuse of a right-angled triangle with side lengths of {0:.2f} and {1:.2f} is {2:.2f}'.format(a, b, np.sqrt((a**2) + (b**2))))
   return  np.sqrt((a**2) + (b**2))
-

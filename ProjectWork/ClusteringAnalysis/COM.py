@@ -2,35 +2,59 @@ import numpy as np
 
 def COM_X(m,x):
     '''
-    Calculates COM for x-coordinate.
+    Calculates COM for the x-coordinate of the data
 
-    Data types:
-    m: int or numpy array
+    Parameters
+    ----------
+    m: numpy array
+        adds weighting to the data
     x: numpy array
+        x coordinate of the dataset
+
+    Returns
+    ----------
+    float
+        centre of mass value for x coordinate of each cluster
     '''
     return (np.sum(m * x)) / np.sum(m)
 
 def COM_Y(m,y):
     '''
-    Calculates COM for y-coordinate.
+    Calculates COM for the y-coordinate of the data
 
-    Data types:
-    m: int or numpy array
+    Parameters
+    ----------
+    m: numpy array
+        adds weighting to the data
     y: numpy array
+        y coordinate of the dataset
+
+    Returns
+    ----------
+    float
+        centre of mass value for x coordinate of each cluster
     '''
     return (np.sum(m * y)) / np.sum(m)
 
 def Cluster_COM(Data, Range, label, Weight=True):
     '''
-    Calculates COM for every cluster in a clustering graph.
-    
-    Data types:
+    Calculates the COM for every cluster in the real space clustering graph
+
+    Parameters
+    ----------
     Data: numpy array
+        dataset used for clustering
     Range: numpy array
+        loop over the range of the cluster labels
     label: numpy array
+        dbscan clustering labels, i.e. db.labels
     Weight: bool
         if True, applies pixel weighting to the centre of masses
 
+    Returns
+    ----------
+    COM_Values: list
+        list of centre of mass values
     '''
     COM_Values = []
 

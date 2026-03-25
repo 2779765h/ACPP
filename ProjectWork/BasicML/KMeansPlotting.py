@@ -3,34 +3,36 @@ import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 from colorsys import hsv_to_rgb
 
-def KMeansClustering(Data, ScalingArray,
-                     n_clusters, 
+def KMeansClustering(Data, klabels,
                      c1, c2, 
-                     xlabel, ylabel,
+                     xlabel, ylabel, Title,
+                     offset,
                      savefig = True):
     '''
-    Function which applies KMeans clustering to a dataset 
-    and plots a clustering graph from selected data arrays. 
-
-    Parameters:
-    Data: numpy array
-    ScalingArray: numpy array
-    n_clusters: int
-    c1: int
-    c2: int
-    xlabel: string
-    ylabel: string
-    savefig: bool
-        if True, figure is saved as a graphics file
-    savefigtitle: bool, string
-        if True, type the name of the figure to saved as a string
-
-    Return:
-    NoneType
-    '''
-    # Apply KMeans
-    k = KMeans(n_clusters=n_clusters).fit(Data*ScalingArray)
+    A function that plots a clustering graph from selected data arrays,
+    after KMeans has been applied to a dataset. 
     
+    Parameters
+    ----------
+    Data: numpy array
+        dataset used for the KMeans algorithm
+    klabels: numpy array
+        labels from kmeans clusters, i.e. k.labels_
+    c1, c2: int
+        column indices to select from the data array
+    xlabel, ylabel: string
+        labels for the x and y axes
+    Title: string
+        title for the plot
+    offset: float
+        offset can be used to adjust the spacing of labels from the data
+    savefig: bool
+        if True, the figure is saved as 'KMeansClusteringPlot'
+
+    Returns
+    ----------
+    None
+    '''
     # Colour scheme
     colours = []
     r = k.labels_.max()+1

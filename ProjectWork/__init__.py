@@ -1,5 +1,5 @@
-import ACPP.BasicML
-import ACPP.ClusteringAnalysis
-import ACPP.PeriodicAndFitFuncs
-import ACPP.funcs
+import ProjectWork.BasicML
+import ProjectWork.ClusteringAnalysis
+import ProjectWork.PeriodicAndFitFuncs
+import ProjectWork.funcs
 

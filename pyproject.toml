@@ -21,13 +21,15 @@ dependencies = [
 license = "MIT"
 license-files = ["LICEN[CS]E*"]
 
+[build-system]
+requires = ["setuptools >= 77.0.3"] 
+build-backend = "setuptools.build_meta"
+
 [tool.setuptools]
-# ...
 package-dir = {"" = "ProjectWork"}
 
-[build-system]
-requires = ["setuptools >= 77.0.3"] # check 
-build-backend = "setuptools.build_meta" # check
+[tool.setuptools.packages.find]
+where = ["ProjectWork"]
 
 [project.urls]
 Homepage = "https://github.com/2779765h/ACPP.git"

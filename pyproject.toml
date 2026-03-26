@@ -21,9 +21,8 @@ dependencies = [
 license = "MIT"
 license-files = ["LICEN[CS]E*"]
 
-[tool.setuptools.packages.find]
-where = ["."]
-include = ["ProjectWork*"]
+[tool.setuptools]
+packages = ["ProjectWork"]
 
 [build-system]
 requires = ["setuptools >= 77.0.3"] 

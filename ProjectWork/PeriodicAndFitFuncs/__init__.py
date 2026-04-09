@@ -1,2 +1,2 @@
-from ACPP.PeriodicAndFitFuncs.fit_resdiuals_plot import FitandPlot
-from ACPP.PeriodicAndFitFuncs.periodic_fitting import PeriodicSineFit
+from ProjectWork.PeriodicAndFitFuncs.fit_resdiuals_plot import FitandPlot
+from ProjectWork.PeriodicAndFitFuncs.periodic_fitting import PeriodicSineFit
